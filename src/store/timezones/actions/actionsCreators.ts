@@ -13,6 +13,7 @@ import {
   TZ_SUCCESS_FETCH_LIST_DATA,
 } from './actions';
 import { TimezonesActionCreator, TimezonesThunkDispatch } from '../types';
+import { showNotificationWithTimeout } from '../../notification/actions/action-creators';
 
 export const timezonesStartFetchList = (): TimezonesPendingFetchList => ({
   type: TZ_PENDING_FETCH_LIST_DATA,
@@ -41,13 +42,13 @@ export const fetchTimezonesListData: TimezonesActionCreator =
         dispatch(timezonesSuccesFetchList(data));
       }
     } catch (e) {
-      // dispatch(
-      //   showNotificationWithTimeout({
-      //     type: 'error',
-      //     title: 'Не удалось получить данные',
-      //     text: 'Попробуйте обновить страницу',
-      //   }),
-      // );
+      dispatch(
+        showNotificationWithTimeout({
+          type: 'error',
+          title: 'Не удалось получить данные',
+          text: 'Попробуйте обновить страницу',
+        }),
+      );
       dispatch(timezonesFailedFetchList());
     } finally {
       dispatch(timezonesFinishFetchList());

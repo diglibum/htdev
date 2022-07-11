@@ -50,27 +50,6 @@ export const HomePage = () => {
     else return setMessageErrorText(null);
   };
 
-  useEffect(() => {
-    dispatch(fetchTimezonesListData());
-  }, [dispatch]);
-
-  useEffect(() => {
-    const userTimesone = localStorage.getItem('userTimezone');
-    const userSignature = localStorage.getItem('userSignature');
-
-    if (userTimesone && timezones !== null) {
-      const index = timezones.findIndex((zone) => zone === userTimesone);
-      if (index > 0) {
-        setTimezone(index);
-      }
-    }
-
-    if (userSignature) {
-      signatureValidate(userSignature);
-      setSignature(userSignature);
-    }
-  }, [timezones]);
-
   const handleMessageChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     dispatch(messageSetNew(value));
@@ -100,8 +79,25 @@ export const HomePage = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem('userNotes', JSON.stringify(notes));
-  }, [notes]);
+    dispatch(fetchTimezonesListData());
+  }, [dispatch]);
+
+  useEffect(() => {
+    const userTimesone = localStorage.getItem('userTimezone');
+    const userSignature = localStorage.getItem('userSignature');
+
+    if (userTimesone && timezones !== null) {
+      const index = timezones.findIndex((zone) => zone === userTimesone);
+      if (index > 0) {
+        setTimezone(index);
+      }
+    }
+
+    if (userSignature) {
+      signatureValidate(userSignature);
+      setSignature(userSignature);
+    }
+  }, [timezones]);
 
   useEffect(() => {
     if (newMessage !== undefined) {
