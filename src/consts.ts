@@ -1,1 +1,1 @@
-export const DEFAULT_NOTES_ON_PAGE = 10;
+export const notesOnPageCounts = [6, 10, 20, 30, 40, 50, 100];

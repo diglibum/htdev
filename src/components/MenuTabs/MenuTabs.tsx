@@ -7,7 +7,7 @@ export const MenuTabs = () => {
 
   const tabs = [
     { label: 'Создать запись', href: '/' },
-    { label: 'Записи', href: '/records' },
+    { label: 'Записи', href: '/notes' },
   ];
 
   const activeTab = tabs.findIndex((tab) => tab.href === location.pathname);

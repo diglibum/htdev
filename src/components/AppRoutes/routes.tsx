@@ -1,6 +1,6 @@
 import React from 'react';
 import type { RouteObject } from 'react-router-dom';
-import { AllRecordsPage } from '../../pages/AllRecordsPage';
+import { AllNotesPage } from '../../pages/AllNotesPage';
 import { HomePage } from '../../pages/HomePage';
 
 export const routes: RouteObject[] = [
@@ -10,7 +10,7 @@ export const routes: RouteObject[] = [
     element: <HomePage />,
   },
   {
-    path: '/records',
-    element: <AllRecordsPage />,
+    path: '/notes',
+    element: <AllNotesPage />,
   },
 ];

@@ -1,1 +1,0 @@
-export { AllRecordsPage } from './AllRecordsPage';

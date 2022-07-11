@@ -4,6 +4,7 @@ import {
   WT_FAILED_FETCH_DATA,
   WT_FINISH_FETCH_DATA,
   WT_SUCCESS_FETCH_DATA,
+  MSG_SET_NEW,
 } from './actions';
 
 export interface WorldtimePendingFetchList {
@@ -21,8 +22,14 @@ export interface WorldtimeFinishFetchList {
   type: typeof WT_FINISH_FETCH_DATA;
 }
 
-export type WorldtimeActions =
+export interface MessageSetNew {
+  type: typeof MSG_SET_NEW;
+  payload: string;
+}
+
+export type NotesActions =
   | WorldtimePendingFetchList
   | WorldtimeSuccessFetchList
   | WorldtimeFaliedFetchList
-  | WorldtimeFinishFetchList;
+  | WorldtimeFinishFetchList
+  | MessageSetNew;
