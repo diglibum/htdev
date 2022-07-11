@@ -2,7 +2,6 @@ import path from 'path';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import ImageMinimizerPlugin from 'image-minimizer-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-// import CopyPlugin from 'copy-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 
@@ -66,9 +65,6 @@ module.exports = {
       inject: 'body',
     }),
     new CompressionPlugin(),
-    // new CopyPlugin({
-    //   patterns: [{ from: './src/assets/images/', to: './assets/images/' }],
-    // }),
     new ImageMinimizerPlugin({
       minimizerOptions: {
         plugins: [

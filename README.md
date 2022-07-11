@@ -20,4 +20,4 @@ $ npm run build
 $ npm run start
 ```
 
-Запускается на: `http://localhost:3000//`
+Запускается на: `http://localhost:3000/`
